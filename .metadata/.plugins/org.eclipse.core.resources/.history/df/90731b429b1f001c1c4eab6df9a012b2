@@ -1,0 +1,40 @@
+package tests;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TestePadrao {
+	
+	private WebDriver driver;
+
+	@Before
+	public void setUp() throws Exception {
+		System.setProperty("webdriver.chrome.driver", "C:\\Drivers\\chromedriver.exe");
+		driver = new ChromeDriver();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		driver.quit();
+	}
+
+	@Test
+	public void test() throws InterruptedException {
+		driver.get("https://www.grocerycrud.com/v1.x/demo/my_boss_is_in_a_hurry/bootstrap");
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("//*[@id=\"switch-version-select\"]")).sendKeys("Bootstrap V4 Theme");
+		
+		driver.findElement(By.xpath("//*[@id=\"gcrud-search-form\"]/div[1]/div[1]/a")).click();
+		
+		
+		
+		
+		
+	}
+
+}
